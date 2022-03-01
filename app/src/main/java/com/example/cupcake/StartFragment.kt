@@ -63,6 +63,7 @@ class StartFragment : Fragment() {
      * Start an order with the desired quantity of cupcakes and navigate to the next screen.
      */
     fun orderCupcake(quantity: Int) {
+        sharedViewModel.setQuantity(quantity)
         findNavController().navigate(R.id.action_startFragment_to_flavorFragment)
     }
 
