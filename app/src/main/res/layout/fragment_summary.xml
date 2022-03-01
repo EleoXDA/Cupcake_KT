@@ -127,7 +127,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="@dimen/side_margin"
-                    tools:text="Total $5.00" />
+                    tools:text="Total $5.00"
+                    android:text="@{@string/total_price(viewModel.price)}"
+                    />
 
             </LinearLayout>
 
