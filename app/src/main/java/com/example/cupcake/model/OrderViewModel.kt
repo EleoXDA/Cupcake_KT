@@ -1,4 +1,6 @@
 package com.example.cupcake.model
 
-class OrderViewModel {
+import androidx.lifecycle.ViewModel
+
+class OrderViewModel : ViewModel() {
 }
