@@ -23,37 +23,6 @@ class OrderViewModel : ViewModel() {
     private val _price = MutableLiveData<Double>()
     val price: LiveData<Double> = _price
 
-
-    fun setQuantity(numberCupcakes: Int) {
-        _quantity.value = numberCupcakes
-    }
-
-    fun setFlavor(desiredFlavor: String) {
-        _flavor.value = desiredFlavor
-    }
-
-    fun setDate(pickupDate: String) {
-        _date.value = pickupDate
-        updatePrice()
-    }
-
-    fun hasNoFlavorSet(): Boolean {
-        return _flavor.value.isNullOrEmpty()
-    }
-
-
-
-    private fun getPickupOptions(): List<String> {
-        val options = mutableListOf<String>()
-        val formatter = SimpleDateFormat("E MMM d", Locale.getDefault())
-        val calendar = Calendar.getInstance()
-        repeat(4) {
-            options.add(formatter.format(calendar.time))
-            calendar.add(Calendar.DATE, 1)
-        }
-        return options
-    }
-
     val dateOptions = getPickupOptions()
     private fun resetOrder() {
         _quantity.value = 0
@@ -79,4 +48,35 @@ class OrderViewModel : ViewModel() {
         orderViewModel._quantity.value = numberCupcakes
         orderViewModel.updatePrice()
     }
+
+    fun setQuantity(numberCupcakes: Int) {
+        _quantity.value = numberCupcakes
+    }
+
+    fun setFlavor(desiredFlavor: String) {
+        _flavor.value = desiredFlavor
+    }
+
+    fun setDate(pickupDate: String) {
+        _date.value = pickupDate
+        updatePrice()
+    }
+
+    fun hasNoFlavorSet(): Boolean {
+        return _flavor.value.isNullOrEmpty()
+    }
+
+    private fun getPickupOptions(): List<String> {
+        val options = mutableListOf<String>()
+        val formatter = SimpleDateFormat("E MMM d", Locale.getDefault())
+        val calendar = Calendar.getInstance()
+        repeat(4) {
+            options.add(formatter.format(calendar.time))
+            calendar.add(Calendar.DATE, 1)
+        }
+        return options
+    }
+
+
+
 }
