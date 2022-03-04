@@ -144,6 +144,15 @@
                 android:layout_marginTop="@dimen/side_margin"
                 android:text="@string/send" />
 
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                style="?attr/materialButtonOutlinedStyle"
+                />
+
         </LinearLayout>
     </ScrollView>
 </layout>
