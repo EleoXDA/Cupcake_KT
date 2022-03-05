@@ -134,7 +134,8 @@
                 app:layout_constraintEnd_toStartOf="@id/next_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/next_button"
-                style="?attr/materialButtonOutlinedStyle"/>
+                style="?attr/materialButtonOutlinedStyle"
+                android:onClick="@{() -> flavorFragment.cancelOrder()}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
