@@ -24,7 +24,7 @@ class OrderViewModel : ViewModel() {
     val price: LiveData<Double> = _price
 
     val dateOptions = getPickupOptions()
-    private fun resetOrder() {
+    fun resetOrder() {
         _quantity.value = 0
         _flavor.value = ""
         _date.value = dateOptions[0]
